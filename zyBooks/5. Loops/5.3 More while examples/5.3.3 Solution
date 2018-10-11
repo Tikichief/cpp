@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+  int numInsects;
+
+  cin >> numInsects; // Must be >= 1
+
+	while (numInsects < 100)
+	{
+		cout << numInsects << " ";
+		numInsects = numInsects * 2;
+	}
+	
+  cout << endl;
+  
+  system("pause");
+   return 0;
+}
