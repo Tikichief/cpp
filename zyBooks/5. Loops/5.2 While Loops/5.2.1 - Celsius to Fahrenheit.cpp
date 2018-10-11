@@ -1,3 +1,9 @@
+/*
+The following Celsius to Fahrenheit example shows the common pattern of getting user input 
+at the end of each loop iteration to determine whether to continue looping.
+*/
+
+
 #include <iostream>
 using namespace std;
 
