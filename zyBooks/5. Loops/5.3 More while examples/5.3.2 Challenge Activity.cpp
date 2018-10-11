@@ -1,4 +1,9 @@
-// Write an expression that continues to bid until the user enters 'n'. 
+/* 
+5.3.2: Bidding example.cpp
+Write an expression that continues to bid until the user enters 'n'. 
+*/
+
+
 
 #include <iostream>
 #include <cstdlib>   // Enables use of rand()
