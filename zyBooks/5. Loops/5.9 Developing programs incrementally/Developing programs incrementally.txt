@@ -1,0 +1,10 @@
+Creating correct programs can be hard. Following a good programming process helps. What many new 
+programmers do, but shouldn't, is write the entire program, compile it, and run it—hoping it works. Debugging such a 
+program can be difficult because there may be many distinct bugs.
+
+Experienced programmers develop programs incrementally, meaning they create a simple program version, and 
+then growing the program little-by-little into successively more-complete versions.
+
+The following program allows the user to enter a phone number that includes letters. Such letters appear on phone 
+keypads along with numbers, enabling phone numbers like 1-555-HOLIDAY. The program converts a phone number 
+having numbers/letters into one having numbers only.
