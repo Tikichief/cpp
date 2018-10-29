@@ -1,0 +1,14 @@
+Array declarations and accessing elements
+
+A programmer commonly needs to maintain a list of items, 
+just as people often maintain lists of items like a grocery list or a course roster. 
+An array is an ordered list of items of a given data type. Each item in an array is called an element.
+
+Construct 6.2.1: Array declaration.
+dataType arrayName[numElements];
+
+This statement declares an array having the specified number of elements in memory, each element of the specified data type. 
+The desired number of elements are specified in [ ] symbols.
+
+Terminology note: [ ] are brackets. { } are braces. 
+In an array access, the number in brackets is called the index of the corresponding element. The first array element is at index 0.
