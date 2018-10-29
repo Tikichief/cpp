@@ -1,4 +1,6 @@
 /*
+6.2.3: Printing array elements with a for loop.
+
 Write three statements to print the first three elements of array runTimes. Follow each statement with a newline. Ex: If runTime = 
 {800, 775, 790, 805, 808}, print:
 
