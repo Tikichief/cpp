@@ -1,0 +1,7 @@
+An array's elements are not automatically initialized during the variable declaration and should be initialized before being read. 
+A programmer may initialize an array's elements in an array variable declaration by specifying the initial values in braces {} separated by 
+commas. Ex: int myArray[3] = {5, 7, 11}; initializes element at index 0 with 5, element at index 1 with 7, and element at index 2 with 11. 
+For larger arrays, a loop may be used for initialization.
+
+Like other variables, the keyword const may be prepended to an array variable declaration to prevent changes to the array. Thus,  
+const int YEARS[3] = {1865, 1920, 1964}; followed by YEARS[0] = 2000; yields a compiler error.
