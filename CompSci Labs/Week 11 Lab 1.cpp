@@ -19,7 +19,9 @@ Enter weight 3:
 
 Enter weight 4:
 
-166.3 Enter weight 5:
+166.3 
+
+Enter weight 5:
 
 93.0
 
