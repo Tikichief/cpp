@@ -1,0 +1,7 @@
+Loops and vectors
+
+A key advantage of vectors becomes evident when used in conjunction with loops. The program below uses a loop to allow a user to enter 
+8 integer values, storing those values in a vector, and then printing those 8 values.
+
+A vector's size() function returns the number of vector elements. Ex: In the program below, userVals.size() is 8 because the vector was 
+declared with 8 elements.
