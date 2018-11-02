@@ -1,0 +1,18 @@
+Vector declaration and accessing elements
+
+A programmer commonly needs to maintain a list of items, just as people often maintain lists of items like a grocery list or a course roster. 
+A vector is an ordered list of items of a given data type. Each item in a vector is called an element. A programmer must include the statement 
+#include <vector> at the top of the file when planning to use vectors.
+
+Construct 6.7.1: Vector declaration.
+vector<dataType> vectorName(numElements);
+
+
+The statement above declares a vector with the specified number of elements, each element of the specified data type. The type of each 
+vector element is specified within the angle brackets (<>). The number of vector elements is specified within parentheses following the 
+vector name. Ex: vector<int> gameScores(4); declares a vector gamesScores with 4 integer elements.
+
+Terminology note: { } are braces. < > are angle brackets, or chevrons. In a vector access, the number in .at() parentheses is called the index 
+of the corresponding element. The first vector element is at index 0.
+
+If you have studied arrays, then know that a vector was added to C++ as a safer and more powerful form of arrays, discussed elsewhere.
