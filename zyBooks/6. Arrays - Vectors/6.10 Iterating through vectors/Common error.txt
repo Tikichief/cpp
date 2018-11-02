@@ -1,0 +1,15 @@
+Common error: Accessing out of range vector element
+
+A common error is to try to access a vector with an index that is out of the vector's index range. Ex: Trying to access highScores.at(8)
+when highScores valid indices are 0-7. Care should be taken whenever a user enters a number that is then used as a vector index, and 
+when using a loop index as a vector index also, to ensure the array index is within a vector's valid index range. Accessing an index that
+is out of range causes the program to automatically abort execution, typically with an error message being automatically printed. For 
+example, for the declaration vector highScores(8), accessing highScores.at(8), or highScores.at(i) where i is 8, yields the following 
+error message when running the program compiled with g++:
+
+Figure 6.10.4: Sample error message when accessing an out of range vector index.
+
+terminate called after throwing an instance of 'std::out_of_range'
+  what():  vector::_M_range_check
+Abort
+
