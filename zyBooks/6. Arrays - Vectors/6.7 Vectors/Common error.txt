@@ -1,0 +1,10 @@
+Common error: Forgetting to include <vector>
+
+A common error is to forget the #include <vector> at the top of the file when using vectors. Trying to then declare a vector variable 
+may yield a strange compiler error message, such as:
+
+$ g++ -Wall testfile.cpp
+testfile.cpp:12: error: ISO C++ forbids declaration of vector with no type
+testfile.cpp:12: error: expected ; before < token
+
+The same error message may be seen if the vector library is included but the namespace std is not used.
