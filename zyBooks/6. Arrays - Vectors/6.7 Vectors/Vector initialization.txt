@@ -1,0 +1,12 @@
+Vector initialization
+
+A vector's elements are automatically initialized to 0s during the vector declaration.
+
+All of a vector's elements may be initialized to another single value. Ex: vector<int> myVector(3, -1); creates a vector named 
+myVector with three elements, each with value -1.
+
+A programmer may initialize each vector element with different values by specifying the initial values in braces {} separated by commas. 
+Ex: vector<int> carSales = {5, 7, 11}; creates a vector of three integer elements initialized with values 5, 7, and 11. Such vector 
+declaration and initialization does not require specifying the vector size, because the vector's size is automatically set to the number of 
+elements within the braces. For a larger vector, initialization may be done by first declaring the vector, and then using a loop to assign vector 
+elements.
