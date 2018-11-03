@@ -17,7 +17,12 @@ int main() {
    }
    
    // Double each element -- FIXME write this loop
-  
+  for (i = 0; i < NUM_ELEMENTS; ++i)
+  {
+     userVals[i] = userVals[i] * 2;
+  }
+   
+   
    // Print numbers
    cout << "New numbers: ";
    for (i = 0; i < NUM_ELEMENTS; ++i) {
