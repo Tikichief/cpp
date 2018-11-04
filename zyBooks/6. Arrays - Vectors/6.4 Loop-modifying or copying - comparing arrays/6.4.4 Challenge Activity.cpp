@@ -22,7 +22,14 @@ int main() {
    minValue = 10;
 
    /* Your solution goes here  */
-
+	for (i = 0; i < NUM_POINTS; i++)
+	{
+		if (dataPoints[i] < minValue)
+			dataPoints[i] *= 2;
+		else
+			dataPoints[i] = dataPoints[i];
+	}
+   
    for (i = 0; i < NUM_POINTS; ++i) {
       cout << dataPoints[i] << " " ;
    }
