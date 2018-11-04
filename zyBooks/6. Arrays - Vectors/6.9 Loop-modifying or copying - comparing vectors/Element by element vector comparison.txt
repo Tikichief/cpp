@@ -1,0 +1,18 @@
+
+Element by element vector comparison
+
+In C++, the == operator conveniently compares vectors element-by-element, called a vector equality operation, 
+with vectorA == vectorB evaluating to true if the vectors are the same size AND each element pair is equal.
+
+Ex:
+
+Assume vectors have been declared as follows and have been initialized as indicated in the comments:
+
+vector<int> vectorX(2); // {3,4}
+vector<int> vectorY(5); // {3,4,0,7,8}
+vector<int> vectorZ(5); // {3,4,0,6,8}
+
+1)  (vectorX == vectorY) will evaluate to: FALSE
+2)  Given: vectorX = vectorY; (vectorX == vectorY) will evaluate to: TRUE
+3)  (vectorZ == vectorY) will evaluate to: FALSE
+4)  (vectorZ.size() == vectorY.size()) will evaluate to: TRUE
