@@ -1,0 +1,21 @@
+Vector Resize
+
+Commonly, the size of a list of items is not known during a program's compile time. Thus, a vector's size need not be specified in the 
+vector's declaration. Instead, a vector's size can be set or changed while a program executes using resize(N). Ex: highScore.resize(10) 
+resizes the highScores vector to have 10 elements.
+
+resize() can be called multiple times. If the new size is larger, resize() adds elements at the end. If smaller, resize() deletes 
+elements from the end. If userScores has size 3 (elements 0, 1, 2), userScores.resize(2); would delete element 2, leaving elements 
+0 and 1. A subsequent access to userScores.at(2) would result in an error.
+
+Ex:
+
+vector<int> carSales;
+
+// carSales.at(0) = 122; Would be out-of-range error
+
+carSales.resize(3);
+
+carSales.at(0) = 122;
+carSales.at(1) = 11; 
+carSales.at(2) = 7;
