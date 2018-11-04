@@ -1,0 +1,9 @@
+Two-dimensional arrays
+
+An array can be declared with two dimensions. 
+int myArray[R][C] represents a table of int variables with R rows and C columns, 
+so R*C elements total. For example, int myArray[2][3] creates a table with 2 rows and 3 columns, 
+for 6 int variables total. Example accesses are myArray[0][0] = 33; or num = myArray[1][2].
+
+Conceptually, a two-dimensional array is a table with rows and columns. 
+The compiler maps two-dimensional array elements to one-dimensional memory, each row following the previous row, known as row-major order.
