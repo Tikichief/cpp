@@ -24,7 +24,14 @@ int main() {
    bonusScores[3] = 40;
 
    /* Your solution goes here  */
-
+	for (i = 0; i < SCORES_SIZE; ++i) 
+	{
+		if (i == SCORES_SIZE - 1)
+			bonusScores[i] = bonusScores[i];
+		else
+			bonusScores[i] += bonusScores[i+1];
+	}
+   
    for (i = 0; i < SCORES_SIZE; ++i) {
       cout << bonusScores[i] << " ";
    }
