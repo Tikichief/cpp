@@ -396,6 +396,7 @@ int main()
 					{
 						if (userPriceRange >= 122000)
 						{
+							cout << "The price range for these years are: $122,000 and above." << endl;
 							cout << "Would you like to buy " << carYear.at(userYear - 1) << " " << userBrand1 << "?" << endl;
 							cout << "[1] Yes" << " [2] No : ";		// User input for buying car
 							cin >> userChoice;
@@ -688,6 +689,7 @@ int main()
 						{
 							if (userPriceRange >= 24000)
 							{
+								cout << "\nThe price range for these years are: $24,000 and above." << endl;
 								cout << "Would you like to buy " << carYear.at(userYear - 1) << " " << userBrand1 << "?" << endl;
 								cout << "[1] Yes" << " [2] No : ";		// User input for buying car
 								cin >> userChoice;
@@ -800,6 +802,7 @@ int main()
 					{
 						if (userPriceRange >= 14000)
 						{
+							cout << "\nThe price range for these years are: $14,000 and above." << endl;
 							cout << "Would you like to buy " << carYear.at(userYear - 1) << " " << userBrand1 << "?" << endl;
 							cout << "[1] Yes" << " [2] No : ";		// User input for buying car
 							cin >> userChoice;
@@ -890,6 +893,7 @@ int main()
 						{
 							if (userPriceRange >= 20000)
 							{
+								cout << "\nThe price range for these years are: $20,000 and above." << endl;
 								cout << "Would you like to buy " << carYear.at(userYear - 1) << " " << userBrand1 << "?" << endl;
 								cout << "[1] Yes" << " [2] No : ";		// User input for buying car
 								cin >> userChoice;
