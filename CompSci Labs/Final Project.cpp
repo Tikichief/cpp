@@ -6,46 +6,35 @@ using namespace std;
 
 class Car
 {
-private:
-	string carBrand, carModel;
-	string year, price;
 
 public:
-	void setCarBrand(string cb)
+
+	string name, brand, model, year, price;
+	int priceRange;
+
+	// Constructor
+	Car(string n, int pR, string b, string m, string y, string p)
 	{
-		carBrand = cb;
-	}
-	void setCarModel(string cm)
-	{
-		carModel = cm;
-	}
-	void setCarYear(string y)
-	{
+		name = n;
+		priceRange = pR;
+		brand = b;
+		model = m;
 		year = y;
-	}
-	void setCarprice(string p)
-	{
 		price = p;
 	}
 
-	string getCarBrand()
+	// Member Function
+	void Print()
 	{
-		return carBrand;
-	}
-
-	string getCarModel()
-	{
-		return carModel;
-	}
-
-	string getCarYear()
-	{
-		return year;
-	}
-
-	string getCarPrice()
-	{
-		return price;
+		//Display output
+		cout << "\n------------- " << endl;
+		cout << "Name: \t\t" << name << endl;
+		cout << "Wealth: \t$" << priceRange << endl;
+		cout << "Brand: \t\t" << brand << endl;
+		cout << "Model: \t\t" << model << endl;
+		cout << "Year: \t\t" << year << endl;
+		cout << "Price: \t\t" << price << endl;
+		cout << "-------------\n" << endl;
 	}
 };
 
@@ -70,12 +59,13 @@ int main()
 	carYearT.at(0) = "2015-2018";
 
 	// Declaring local variables
-	string userName, userAnswer, userBrand, userModel, userBrand1, buyBrand, buyModel, buyYear, buyPrice, setPrice;
-	int userPriceRange, userYear, userChoice;
+	string userName, userAnswer, userBrand, userModel, userBrand1, buyerName, buyBrand, buyModel, buyYear, buyPrice, setPrice;
+	int userPriceRange, userYear, userChoice, buyerPriceRange;
 
 	// User input name
 	cout << "Enter your name: ";
 	getline(cin, userName);
+	buyerName = userName;
 
 	// User input buying car
 	cout << "Would you like to buy a car? ";
@@ -95,6 +85,7 @@ int main()
 		{
 			cout << "Enter your price range: $";
 			cin >> userPriceRange;
+			buyerPriceRange = userPriceRange;
 			if (userPriceRange < 5000)
 			{
 				cout << "You are broke af! ^_^ and cannot afford to buy a car at the moment." << endl;
@@ -111,9 +102,9 @@ int main()
 	/*
 	else if (userAnswer == "No" || userAnswer == "no")
 	{
-		cout << "Okay bye then..." << endl;
-		system("pause");
-		return 0;
+	cout << "Okay bye then..." << endl;
+	system("pause");
+	return 0;
 	}
 	*/
 
@@ -164,7 +155,7 @@ int main()
 					if (userYear == 1)
 					{
 						cout << "\nThe price range for these years are: $13,000 - $20,000." << endl;
-						cout << "Would you like to buy: " << carYear.at(userYear - 1) << " " << userBrand1 << " " << userModel <<"?" << endl;
+						cout << "Would you like to buy: " << carYear.at(userYear - 1) << " " << userBrand1 << " " << userModel << "?" << endl;
 						cout << "[1] Yes" << " [2] No : ";		// User input for buying car
 						cin >> userChoice;
 						// Assign local variable if user buys car
@@ -329,7 +320,7 @@ int main()
 				}
 			}
 		}
-		
+
 		// Tesla
 		if (userBrand1 == "Tesla" || userBrand1 == "tesla")
 		{
@@ -1038,21 +1029,8 @@ int main()
 	// Creates Object, set funtions, call functions
 	if (userChoice == 1)
 	{
-		Car Buy;
-		Buy.setCarBrand(buyBrand);
-		Buy.setCarModel(buyModel);
-		Buy.setCarYear(buyYear);
-		Buy.setCarprice(buyPrice);
-
-		//Display output
-		cout << "\n------------- " << endl;
-		cout << "Name: \t\t" << userName << endl;
-		cout << "Wealth: \t$" << userPriceRange << endl;
-		cout << "Brand: \t\t" << Buy.getCarBrand() << endl;
-		cout << "Model: \t\t" << Buy.getCarModel() << endl;
-		cout << "Year: \t\t" << Buy.getCarYear() << endl;
-		cout << "Price: \t\t" << Buy.getCarPrice() << endl;
-		cout << "-------------\n" << endl;
+		Car Buy(buyerName, buyerPriceRange, buyBrand, buyModel, buyYear, buyPrice);
+		Buy.Print();
 	}
 	else if (userChoice == 2)
 	{
@@ -1062,3 +1040,111 @@ int main()
 	system("pause");
 	return 0;
 }
+
+
+
+
+
+/*
+class Car
+{
+private:
+string carBrand, carModel;
+string year, price;
+
+public:
+void setCarBrand(string cb)
+{
+carBrand = cb;
+}
+void setCarModel(string cm)
+{
+carModel = cm;
+}
+void setCarYear(string y)
+{
+year = y;
+}
+void setCarprice(string p)
+{
+price = p;
+}
+
+string getCarBrand()
+{
+return carBrand;
+}
+
+string getCarModel()
+{
+return carModel;
+}
+
+string getCarYear()
+{
+return year;
+}
+
+string getCarPrice()
+{
+return price;
+}
+};
+*/
+
+/*
+// Creates Object, set funtions, call functions
+if (userChoice == 1)
+{
+Car Buy;
+Buy.setCarBrand(buyBrand);
+Buy.setCarModel(buyModel);
+Buy.setCarYear(buyYear);
+Buy.setCarprice(buyPrice);
+
+//Display output
+cout << "\n------------- " << endl;
+cout << "Name: \t\t" << userName << endl;
+cout << "Wealth: \t$" << userPriceRange << endl;
+cout << "Brand: \t\t" << Buy.getCarBrand() << endl;
+cout << "Model: \t\t" << Buy.getCarModel() << endl;
+cout << "Year: \t\t" << Buy.getCarYear() << endl;
+cout << "Price: \t\t" << Buy.getCarPrice() << endl;
+cout << "-------------\n" << endl;
+}
+else if (userChoice == 2)
+{
+cout << "You decided not to buy a car. =(" << endl;
+}
+*/
+
+/*
+#include<iostream>
+#include<string>
+using namespace std;
+
+class Test {
+	
+public:
+
+	int x, y;
+
+	Test(int a, int b) {
+		x = a;
+		y = b;
+	}
+
+	void print() {
+		cout << x << ", " << y << endl;
+	}
+};
+
+int main() {
+
+	Test A(10, 40);
+	A.print();
+
+	system("pause");
+	return 0;
+}
+*/
