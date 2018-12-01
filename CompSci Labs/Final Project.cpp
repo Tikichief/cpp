@@ -81,9 +81,18 @@ int main()
 	cout << "Would you like to buy a car? ";
 	cin >> userAnswer;
 
-	if (userAnswer == "yes" || userAnswer == "Yes")
+	// Input validation user buying a car
+	while (userAnswer == "yes" || userAnswer != "yes")
+
+	{
+		if (userAnswer == "No" || userAnswer == "no")
 		{
-			// User input price range
+			cout << "Okay bye then..." << endl;
+			system("pause");
+			return 0;
+		}
+		if (userAnswer == "yes" || userAnswer == "Yes")
+		{
 			cout << "Enter your price range: $";
 			cin >> userPriceRange;
 			if (userPriceRange < 5000)
@@ -92,13 +101,21 @@ int main()
 				system("pause");
 				return 0;
 			}
+			break;
 		}
+		cout << "Invalid entry! Please type [yes] or [no]: ";
+		cin >> userAnswer;
+	}
+
+
+	/*
 	else if (userAnswer == "No" || userAnswer == "no")
-		{
-			cout << "Okay bye then..." << endl;
-			system("pause");
-			return 0;
-		}
+	{
+		cout << "Okay bye then..." << endl;
+		system("pause");
+		return 0;
+	}
+	*/
 
 	do
 	{
@@ -113,12 +130,12 @@ int main()
 
 		// User inputs brand name
 		cout << "Enter the [brand name] you would like to buy ";
-		cout << "('q' to quit): ";
+		cout << "( enter 'q' to quit ): ";
 		cin >> userBrand1;
 		cout << endl;
 
 		// Dodge
-		if (userBrand1 == "Dodge")
+		if (userBrand1 == "Dodge" || userBrand1 == "dodge")
 		{
 			if (userPriceRange < 13000)
 			{
@@ -133,7 +150,7 @@ int main()
 				cout << "-------------" << endl;
 				cout << "Enter the [model name] you want to buy: ";		// User input model name
 				cin >> userModel;
-				if (userModel == "Challenger")
+				if (userModel == "Challenger" || userModel == "challenger")
 				{
 					cout << "\n-------------";
 					cout << "\nYear" << endl;
@@ -147,7 +164,7 @@ int main()
 					if (userYear == 1)
 					{
 						cout << "\nThe price range for these years are: $13,000 - $20,000." << endl;
-						cout << "Would you like to buy " << carYear.at(userYear - 1) << " " << userBrand1 << "?" << endl;
+						cout << "Would you like to buy: " << carYear.at(userYear - 1) << " " << userBrand1 << " " << userModel <<"?" << endl;
 						cout << "[1] Yes" << " [2] No : ";		// User input for buying car
 						cin >> userChoice;
 						// Assign local variable if user buys car
@@ -170,7 +187,7 @@ int main()
 						if (userPriceRange >= 22000)
 						{
 							cout << "The price range for these years are: $22,000 - $30,000." << endl;
-							cout << "Would you like to buy " << carYear.at(userYear - 1) << " " << userBrand1 << "?" << endl;
+							cout << "Would you like to buy: " << carYear.at(userYear - 1) << " " << userBrand1 << " " << userModel << "?" << endl;
 							cout << "[1] Yes" << " [2] No : ";		// User input for buying car
 							cin >> userChoice;
 							// Assign local variable if user buys car
@@ -190,14 +207,15 @@ int main()
 						}
 						else if (userPriceRange < 22000)
 						{
-							cout << "\n[You cant afford this model year of the " << userBrand1 << " " << userModel << ".]" << endl;
+							cout << "\n[You cannot afford a " << carYear.at(userYear - 1) << " " << userBrand1 << " " << userModel << ".]" << endl;
+
 						}
 					}
 					else if (userYear == 3)
 					{
 						if (userPriceRange >= 35000)
 						{
-							cout << "Would you like to buy " << carYear.at(userYear - 1) << " " << userBrand1 << "?" << endl;
+							cout << "Would you like to buy: " << carYear.at(userYear - 1) << " " << userBrand1 << " " << userModel << "?" << endl;
 							cout << "[1] Yes" << " [2] No : ";		// User input for buying car
 							cin >> userChoice;
 							// Assign local variable if user buys car
@@ -217,7 +235,95 @@ int main()
 						}
 						else if (userPriceRange < 35000)
 						{
-							cout << "\n[You cant afford this model year of the " << userBrand1 << " " << userModel << ".]" << endl;
+							cout << "\n[You cannot afford a " << carYear.at(userYear - 1) << " " << userBrand1 << " " << userModel << ".]" << endl;
+						}
+					}
+				}
+				if (userModel == "Charger" || userModel == "charger")
+				{
+					cout << "\n-------------";
+					cout << "\nYear" << endl;
+					for (int i = 0; i < 3; ++i)
+					{
+						cout << "[" << i + 1 << "] " << carYear.at(i) << endl;
+					}
+					cout << "-------------" << endl;
+					cout << "Enter the [number] for the model year you want to buy: ";		// User input model year
+					cin >> userYear;
+					if (userYear == 1)
+					{
+						cout << "\nThe price range for these years are: $13,000 - $20,000." << endl;
+						cout << "Would you like to buy: " << carYear.at(userYear - 1) << " " << userBrand1 << " " << userModel << "?" << endl;
+						cout << "[1] Yes" << " [2] No : ";		// User input for buying car
+						cin >> userChoice;
+						// Assign local variable if user buys car
+						if (userChoice == 1)
+						{
+							setPrice = "$13,000 - $20,000";
+							buyBrand = userBrand1;
+							buyModel = userModel;
+							buyYear = carYear.at(userYear - 1);
+							buyPrice = setPrice;
+							break;
+						}
+						else
+						{
+							userChoice = 2;
+						}
+					}
+					else if (userYear == 2)
+					{
+						if (userPriceRange >= 22000)
+						{
+							cout << "The price range for these years are: $22,000 - $30,000." << endl;
+							cout << "Would you like to buy: " << carYear.at(userYear - 1) << " " << userBrand1 << " " << userModel << "?" << endl;
+							cout << "[1] Yes" << " [2] No : ";		// User input for buying car
+							cin >> userChoice;
+							// Assign local variable if user buys car
+							if (userChoice == 1)
+							{
+								setPrice = "$22,000 - $30,000";
+								buyBrand = userBrand1;
+								buyModel = userModel;
+								buyYear = carYear.at(userYear - 1);
+								buyPrice = setPrice;
+								break;
+							}
+							else
+							{
+								userChoice = 2;
+							}
+						}
+						else if (userPriceRange < 22000)
+						{
+							cout << "\n[You cannot afford a " << carYear.at(userYear - 1) << " " << userBrand1 << " " << userModel << ".]" << endl;
+						}
+					}
+					else if (userYear == 3)
+					{
+						if (userPriceRange >= 35000)
+						{
+							cout << "Would you like to buy: " << carYear.at(userYear - 1) << " " << userBrand1 << " " << userModel << "?" << endl;
+							cout << "[1] Yes" << " [2] No : ";		// User input for buying car
+							cin >> userChoice;
+							// Assign local variable if user buys car
+							if (userChoice == 1)
+							{
+								setPrice = "$35,000 and above";
+								buyBrand = userBrand1;
+								buyModel = userModel;
+								buyYear = carYear.at(userYear - 1);
+								buyPrice = setPrice;
+								break;
+							}
+							else
+							{
+								userChoice = 2;
+							}
+						}
+						else if (userPriceRange < 35000)
+						{
+							cout << "\n[You cannot afford a " << userYear << " " << userBrand1 << " " << userModel << ".]" << endl;
 						}
 					}
 				}
@@ -225,7 +331,7 @@ int main()
 		}
 		
 		// Tesla
-		if (userBrand1 == "Tesla")
+		if (userBrand1 == "Tesla" || userBrand1 == "tesla")
 		{
 			if (userPriceRange < 65000)
 			{
@@ -240,7 +346,7 @@ int main()
 				cout << "-------------" << endl;
 				cout << "Enter the [model name] you want to buy: ";		// User input model name
 				cin >> userModel;
-				if (userModel == "Model-S")
+				if (userModel == "Model-S" || userModel == "model-s")
 				{
 					cout << "\n-------------";
 					cout << "\nYear" << endl;
@@ -254,7 +360,7 @@ int main()
 					if (userYear == 1)
 					{
 						cout << "\nThe price range for these years are: $65,000 and above." << endl;
-						cout << "Would you like to buy " << carYearT.at(userYear - 1) << " " << userBrand1 << "?" << endl;
+						cout << "Would you like to buy: " << carYearT.at(userYear - 1) << " " << userBrand1 << " " << userModel << "?" << endl;
 						cout << "[1] Yes" << " [2] No : ";		// User input for buying car
 						cin >> userChoice;
 						// Assign local variable if user buys car
@@ -273,7 +379,7 @@ int main()
 						}
 					}
 				}
-				if (userModel == "Model-X")
+				if (userModel == "Model-X" || userModel == "model-x")
 				{
 					if (userPriceRange >= 71000)
 					{
@@ -289,7 +395,7 @@ int main()
 						if (userYear == 1)
 						{
 							cout << "\nThe price range for these years are: $70,000 and above." << endl;
-							cout << "Would you like to buy " << carYearT.at(userYear - 1) << " " << userBrand1 << "?" << endl;
+							cout << "Would you like to buy: " << carYearT.at(userYear - 1) << " " << userBrand1 << " " << userModel << "?" << endl;
 							cout << "[1] Yes" << " [2] No : ";		// User input for buying car
 							cin >> userChoice;
 							// Assign local variable if user buys car
@@ -310,14 +416,14 @@ int main()
 					}
 					else if (userPriceRange < 71000)
 					{
-						cout << "\n[You cant afford this model year of the " << userBrand1 << " " << userModel << ".]" << endl;
+						cout << "\n[You cannot afford a " << carYearT.at(userYear - 1) << " " << userBrand1 << " " << userModel << ".]" << endl;
 					}
 				}
 			}
 		}
 
 		// Mercedes-Benz
-		if (userBrand1 == "Mercedes-Benz")
+		if (userBrand1 == "Mercedes-Benz" || userBrand1 == "mercedes-benz")
 		{
 			if (userPriceRange < 59000)
 			{
@@ -332,7 +438,7 @@ int main()
 				cout << "-------------" << endl;
 				cout << "Enter the [model name] you want to buy: ";		// User input model name
 				cin >> userModel;
-				if (userModel == "G-Class")
+				if (userModel == "G-Class" || userModel == "g-class")
 				{
 					cout << "\n-------------";
 					cout << "\nYear" << endl;
@@ -346,7 +452,7 @@ int main()
 					if (userYear == 1)
 					{
 						cout << "\nThe price range for these years are: $59,000 - $71,000." << endl;
-						cout << "Would you like to buy " << carYear.at(userYear - 1) << " " << userBrand1 << "?" << endl;
+						cout << "Would you like to buy: " << carYear.at(userYear - 1) << " " << userBrand1 << " " << userModel << "?" << endl;
 						cout << "[1] Yes" << " [2] No : ";		// User input for buying car
 						cin >> userChoice;
 						// Assign local variable if user buys car
@@ -369,7 +475,7 @@ int main()
 						if (userPriceRange >= 74000)
 						{
 							cout << "The price range for these years are: $74,000 - $91,000." << endl;
-							cout << "Would you like to buy " << carYear.at(userYear - 1) << " " << userBrand1 << "?" << endl;
+							cout << "Would you like to buy: " << carYear.at(userYear - 1) << " " << userBrand1 << " " << userModel << "?" << endl;
 							cout << "[1] Yes" << " [2] No : ";		// User input for buying car
 							cin >> userChoice;
 							// Assign local variable if user buys car
@@ -389,7 +495,7 @@ int main()
 						}
 						else if (userPriceRange < 74000)
 						{
-							cout << "\n[You cant afford this model year of the " << userBrand1 << " " << userModel << ".]" << endl;
+							cout << "\n[You cannot afford a " << carYearT.at(userYear - 1) << " " << userBrand1 << " " << userModel << ".]" << endl;
 						}
 					}
 					else if (userYear == 3)
@@ -397,7 +503,7 @@ int main()
 						if (userPriceRange >= 122000)
 						{
 							cout << "The price range for these years are: $122,000 and above." << endl;
-							cout << "Would you like to buy " << carYear.at(userYear - 1) << " " << userBrand1 << "?" << endl;
+							cout << "Would you like to buy: " << carYear.at(userYear - 1) << " " << userBrand1 << " " << userModel << "?" << endl;
 							cout << "[1] Yes" << " [2] No : ";		// User input for buying car
 							cin >> userChoice;
 							// Assign local variable if user buys car
@@ -417,11 +523,11 @@ int main()
 						}
 						else if (userPriceRange < 122000)
 						{
-							cout << "\n[You cant afford this model year of the " << userBrand1 << " " << userModel << ".]" << endl;
+							cout << "\n[You cannot afford a " << carYear.at(userYear - 1) << " " << userBrand1 << " " << userModel << ".]" << endl;
 						}
 					}
 				}
-				if (userModel == "Coupe")
+				if (userModel == "Coupe" || userModel == "coupe")
 				{
 					if (userPriceRange >= 7000)
 					{
@@ -480,7 +586,7 @@ int main()
 							}
 							else if (userPriceRange < 14000)
 							{
-								cout << "\n[You cant afford this model year of the " << userBrand1 << " " << userModel << ".]" << endl;
+								cout << "\n[You cant afford a " << carYear.at(userYear - 1) << " " << userBrand1 << " " << userModel << ".]" << endl;
 							}
 						}
 						else if (userYear == 3)
@@ -507,20 +613,20 @@ int main()
 							}
 							else if (userPriceRange < 20000)
 							{
-								cout << "\n[You cant afford this model year of the " << userBrand1 << " " << userModel << ".]" << endl;
+								cout << "\n[You cannot afford a " << carYear.at(userYear - 1) << " " << userBrand1 << " " << userModel << ".]" << endl;
 							}
 						}
 					}
 					else if (userPriceRange < 7000)
 					{
-						cout << "\n[You cant afford a " << userBrand1 << " " << userModel << "]" << endl;
+						cout << "\n[You cannot afford a " << userBrand1 << " " << userModel << "]" << endl;
 					}
 				}
 			}
 		}
 
 		// Nissan
-		if (userBrand1 == "Nissan")
+		if (userBrand1 == "Nissan" || userBrand1 == "nissan")
 		{
 			if (userPriceRange < 6000)
 			{
@@ -535,7 +641,7 @@ int main()
 				cout << "-------------" << endl;
 				cout << "Enter the [model name] you want to buy: ";		// User input model name
 				cin >> userModel;
-				if (userModel == "Altima")
+				if (userModel == "Altima" || userModel == "altima")
 				{
 					cout << "\n-------------";
 					cout << "\nYear" << endl;
@@ -549,7 +655,7 @@ int main()
 					if (userYear == 1)
 					{
 						cout << "\nThe price range for these years are: $6,000 - $12,000." << endl;
-						cout << "Would you like to buy " << carYear.at(userYear - 1) << " " << userBrand1 << "?" << endl;
+						cout << "Would you like to buy: " << carYear.at(userYear - 1) << " " << userBrand1 << " " << userModel << "?" << endl;
 						cout << "[1] Yes" << " [2] No : ";		// User input for buying car
 						cin >> userChoice;
 						// Assign local variable if user buys car
@@ -572,7 +678,7 @@ int main()
 						if (userPriceRange >= 13000)
 						{
 							cout << "The price range for these years are: $13,000 - $19,000." << endl;
-							cout << "Would you like to buy " << carYear.at(userYear - 1) << " " << userBrand1 << "?" << endl;
+							cout << "Would you like to buy: " << carYear.at(userYear - 1) << " " << userBrand1 << " " << userModel << "?" << endl;
 							cout << "[1] Yes" << " [2] No : ";		// User input for buying car
 							cin >> userChoice;
 							// Assign local variable if user buys car
@@ -592,14 +698,15 @@ int main()
 						}
 						else if (userPriceRange < 13000)
 						{
-							cout << "\n[You cant afford this model year of the " << userBrand1 << " " << userModel << ".]" << endl;
+							cout << "\n[You cannot afford a " << carYear.at(userYear - 1) << " " << userBrand1 << " " << userModel << ".]" << endl;
 						}
 					}
 					else if (userYear == 3)
 					{
 						if (userPriceRange >= 21000)
 						{
-							cout << "Would you like to buy " << carYear.at(userYear - 1) << " " << userBrand1 << "?" << endl;
+							cout << "\nThe price range for these years are: $21,000 and above." << endl;
+							cout << "Would you like to buy: " << carYear.at(userYear - 1) << " " << userBrand1 << " " << userModel << "?" << endl;
 							cout << "[1] Yes" << " [2] No : ";		// User input for buying car
 							cin >> userChoice;
 							// Assign local variable if user buys car
@@ -619,11 +726,11 @@ int main()
 						}
 						else if (userPriceRange < 21000)
 						{
-							cout << "\n[You cant afford this model year of the " << userBrand1 << " " << userModel << ".]" << endl;
+							cout << "\n[You cannot afford a " << carYear.at(userYear - 1) << " " << userBrand1 << " " << userModel << ".]" << endl;
 						}
 					}
 				}
-				if (userModel == "Maxima")
+				if (userModel == "Maxima" || userModel == "maxima")
 				{
 					if (userPriceRange >= 7000)
 					{
@@ -682,7 +789,7 @@ int main()
 							}
 							else if (userPriceRange < 13000)
 							{
-								cout << "\n[You cant afford this model year of the " << userBrand1 << " " << userModel << ".]" << endl;
+								cout << "\n[You cannot afford a " << carYear.at(userYear - 1) << " " << userBrand1 << " " << userModel << ".]" << endl;
 							}
 						}
 						else if (userYear == 3)
@@ -710,20 +817,20 @@ int main()
 							}
 							else if (userPriceRange < 24000)
 							{
-								cout << "\n[You cant afford this model year of the " << userBrand1 << " " << userModel << ".]" << endl;
+								cout << "\n[You cannot afford a " << carYear.at(userYear - 1) << " " << userBrand1 << " " << userModel << ".]" << endl;
 							}
 						}
 					}
 					else if (userPriceRange < 7000)
 					{
-						cout << "\n[You cant afford a " << userBrand1 << " " << userModel << "]" << endl;
+						cout << "\n[You cannot afford a " << userBrand1 << " " << userModel << "]" << endl;
 					}
 				}
 			}
 		}
 
 		// Toyota
-		if (userBrand1 == "Toyota")
+		if (userBrand1 == "Toyota" || userBrand1 == "toyota")
 		{
 			if (userPriceRange < 6000)
 			{
@@ -738,7 +845,7 @@ int main()
 				cout << "-------------" << endl;
 				cout << "Enter the [model name] you want to buy: ";		// User input model name
 				cin >> userModel;
-				if (userModel == "Corolla")
+				if (userModel == "Corolla" || userModel == "corolla")
 				{
 					cout << "\n-------------";
 					cout << "\nYear" << endl;
@@ -752,7 +859,7 @@ int main()
 					if (userYear == 1)
 					{
 						cout << "\nThe price range for these years are: $5,000 - $8,000." << endl;
-						cout << "Would you like to buy " << carYear.at(userYear - 1) << " " << userBrand1 << "?" << endl;
+						cout << "Would you like to buy: " << carYear.at(userYear - 1) << " " << userBrand1 << " " << userModel << "?" << endl;
 						cout << "[1] Yes" << " [2] No : ";		// User input for buying car
 						cin >> userChoice;
 						// Assign local variable if user buys car
@@ -775,7 +882,7 @@ int main()
 						if (userPriceRange >= 10000)
 						{
 							cout << "The price range for these years are: $10,000 - $13,000." << endl;
-							cout << "Would you like to buy " << carYear.at(userYear - 1) << " " << userBrand1 << "?" << endl;
+							cout << "Would you like to buy: " << carYear.at(userYear - 1) << " " << userBrand1 << " " << userModel << "?" << endl;
 							cout << "[1] Yes" << " [2] No : ";		// User input for buying car
 							cin >> userChoice;
 							// Assign local variable if user buys car
@@ -795,7 +902,7 @@ int main()
 						}
 						else if (userPriceRange < 10000)
 						{
-							cout << "\n[You cant afford this model year of the " << userBrand1 << " " << userModel << ".]" << endl;
+							cout << "\n[You cannot afford a " << carYear.at(userYear - 1) << " " << userBrand1 << " " << userModel << ".]" << endl;
 						}
 					}
 					else if (userYear == 3)
@@ -803,7 +910,7 @@ int main()
 						if (userPriceRange >= 14000)
 						{
 							cout << "\nThe price range for these years are: $14,000 and above." << endl;
-							cout << "Would you like to buy " << carYear.at(userYear - 1) << " " << userBrand1 << "?" << endl;
+							cout << "Would you like to buy: " << carYear.at(userYear - 1) << " " << userBrand1 << " " << userModel << "?" << endl;
 							cout << "[1] Yes" << " [2] No : ";		// User input for buying car
 							cin >> userChoice;
 							// Assign local variable if user buys car
@@ -823,11 +930,11 @@ int main()
 						}
 						else if (userPriceRange < 14000)
 						{
-							cout << "\n[You cant afford this model year of the " << userBrand1 << " " << userModel << ".]" << endl;
+							cout << "\n[You cannot afford a " << carYear.at(userYear - 1) << " " << userBrand1 << " " << userModel << ".]" << endl;
 						}
 					}
 				}
-				if (userModel == "Camry")
+				if (userModel == "Camry" || userModel == "camry")
 				{
 					if (userPriceRange >= 7000)
 					{
@@ -843,7 +950,7 @@ int main()
 						if (userYear == 1)
 						{
 							cout << "\nThe price range for these years are: $7,000 - $11,000." << endl;
-							cout << "Would you like to buy " << carYear.at(userYear - 1) << " " << userBrand1 << "?" << endl;
+							cout << "Would you like to buy: " << carYear.at(userYear - 1) << " " << userBrand1 << " " << userModel << "?" << endl;
 							cout << "[1] Yes" << " [2] No : ";		// User input for buying car
 							cin >> userChoice;
 							// Assign local variable if user buys car
@@ -866,7 +973,7 @@ int main()
 							if (userPriceRange >= 14000)
 							{
 								cout << "The price range for these years are: $14,000 - $18,000." << endl;
-								cout << "Would you like to buy " << carYear.at(userYear - 1) << " " << userBrand1 << "?" << endl;
+								cout << "Would you like to buy: " << carYear.at(userYear - 1) << " " << userBrand1 << " " << userModel << "?" << endl;
 								cout << "[1] Yes" << " [2] No : ";		// User input for buying car
 								cin >> userChoice;
 								// Assign local variable if user buys car
@@ -886,7 +993,7 @@ int main()
 							}
 							else if (userPriceRange < 14000)
 							{
-								cout << "\n[You cant afford this model year of the " << userBrand1 << " " << userModel << ".]" << endl;
+								cout << "\n[You cannot afford a " << carYear.at(userYear - 1) << " " << userBrand1 << " " << userModel << ".]" << endl;
 							}
 						}
 						else if (userYear == 3)
@@ -894,7 +1001,7 @@ int main()
 							if (userPriceRange >= 20000)
 							{
 								cout << "\nThe price range for these years are: $20,000 and above." << endl;
-								cout << "Would you like to buy " << carYear.at(userYear - 1) << " " << userBrand1 << "?" << endl;
+								cout << "Would you like to buy: " << carYear.at(userYear - 1) << " " << userBrand1 << " " << userModel << "?" << endl;
 								cout << "[1] Yes" << " [2] No : ";		// User input for buying car
 								cin >> userChoice;
 								// Assign local variable if user buys car
@@ -914,13 +1021,13 @@ int main()
 							}
 							else if (userPriceRange < 20000)
 							{
-								cout << "\n[You cant afford this model year of the " << userBrand1 << " " << userModel << ".]" << endl;
+								cout << "\n[You cannot afford a " << carYear.at(userYear - 1) << " " << userBrand1 << " " << userModel << ".]" << endl;
 							}
 						}
 					}
 					else if (userPriceRange < 7000)
 					{
-						cout << "\n[You cant afford a " << userBrand1 << " " << userModel << "]" << endl;
+						cout << "\n[You cannot afford a " << userBrand1 << " " << userModel << "]" << endl;
 					}
 				}
 			}
@@ -949,7 +1056,7 @@ int main()
 	}
 	else if (userChoice == 2)
 	{
-		cout << "You decided not to buy. =(" << endl;
+		cout << "You decided not to buy a car. =(" << endl;
 	}
 
 	system("pause");
