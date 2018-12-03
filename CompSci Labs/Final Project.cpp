@@ -12,7 +12,6 @@ public:
 	string name, brand, model, year, price;
 	int priceRange;
 
-	// Constructor
 	Car(string n, int pR, string b, string m, string y, string p)
 	{
 		name = n;
@@ -23,7 +22,6 @@ public:
 		price = p;
 	}
 
-	// Member Function
 	void Print()
 	{
 		//Display output
@@ -314,7 +312,7 @@ int main()
 						}
 						else if (userPriceRange < 35000)
 						{
-							cout << "\n[You cannot afford a " << userYear << " " << userBrand1 << " " << userModel << ".]" << endl;
+							cout << "\n[You cannot afford a " << carYear.at(userYear - 1) << " " << userBrand1 << " " << userModel << ".]" << endl;
 						}
 					}
 				}
@@ -668,7 +666,7 @@ int main()
 					{
 						if (userPriceRange >= 13000)
 						{
-							cout << "The price range for these years are: $13,000 - $19,000." << endl;
+							cout << "The price range for these years a    - $19,000." << endl;
 							cout << "Would you like to buy: " << carYear.at(userYear - 1) << " " << userBrand1 << " " << userModel << "?" << endl;
 							cout << "[1] Yes" << " [2] No : ";		// User input for buying car
 							cin >> userChoice;
