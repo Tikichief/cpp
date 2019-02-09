@@ -1,0 +1,2 @@
+Upgrade your LinearEquation class with: 
+constructors, mutators, observers, and two helpers evaluate(x) and approxIntegral(a, b).
