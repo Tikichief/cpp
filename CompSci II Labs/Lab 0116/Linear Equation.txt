@@ -1,0 +1,1 @@
+Create a C++ class for a linear equation
