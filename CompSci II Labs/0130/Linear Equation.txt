@@ -1,0 +1,2 @@
+Upgrade your LinearEquation class with: a default constructor, mutators, observers, 
+helper methods (evaluate, approxDerivative and approxIntegral), input and output overloaded operators, and the equality operator.
